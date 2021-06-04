@@ -1,26 +1,26 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I am a PhD candidate at the Greenberg Bladder Cancer Institute at Johns Hopkins. I am interested in uncovering the mechanism by which indolent bladder cancer becomes invasive. To this end, I work both 'wet' and 'dry', leveraging and generating large datasets for hypothesis generation *in silico*, and performing mechanistic studies *in vitro* and  *in vivo*.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
-email: ""
+  - course: PhD in Pharmacology & Molecular Sciences
+    institution: Johns Hopkins University
+    year: Ongoing
+  - course: BS in Biochemistry, Molecular & Cellular Biology
+    institution: University of Arizona
+    year: 2018
+email: "aaragak1@jhmi.edu"
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Reproducible research
+- Oncogenesis
+- 3D cell culture
+- RNAseq
+- Bioinformatics
+- Literate programming
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: Greenberg Bladder Cancer Insititute
+  url: https://www.hopkinsmedicine.org/greenberg-bladder-cancer-institute/
+role: Graduate Student
 social:
 - icon: envelope
   icon_pack: fas
@@ -30,22 +30,18 @@ social:
   icon: twitter
   icon_pack: fab
   label: Follow me on Twitter
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/kaioinformatics
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=XssGXwkAAAAJ&hl=en
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/KaiAragaki
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/adam-aragaki-62533b191/
 superuser: true
-title: Nelson Bighetti
+title: Kai (Adam) Aragaki
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+I am a PhD candidate at the Greenberg Bladder Cancer Institute at Johns Hopkins. I am interested in uncovering the mechanism by which indolent bladder cancer becomes invasive. To this end, I work both 'wet' and 'dry', leveraging and generating large datasets for hypothesis generation *in silico*, and performing mechanistic studies *in vitro* and  *in vivo*.
