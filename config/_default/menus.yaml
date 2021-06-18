@@ -16,6 +16,3 @@ main:
   - name: CV
     url: '#CV'
     weight: 50
-  - name: Contact
-    url: '#contact'
-    weight: 70
