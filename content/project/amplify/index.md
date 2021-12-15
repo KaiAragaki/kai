@@ -16,7 +16,6 @@ links:
   icon_pack: fab
   name: source
   url: https://github.com/KaiAragaki/amplify
-subtitle: ""
 tags:
 - package
 title: amplify
