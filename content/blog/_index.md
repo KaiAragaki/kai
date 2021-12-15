@@ -1,5 +1,5 @@
 ---
-author: Kai
+author: "Kai"
 cascade:
   author: Kai
   show_author_byline: false

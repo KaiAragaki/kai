@@ -1,13 +1,12 @@
 ---
 title: Surviving without survminer
-author: Kai
+author: "Kai"
 date: '2021-12-15'
 slug: []
 categories: []
 tags: []
----
 
-# Introduction
+---
 
 I make a lot of Kaplan-Meier curves. They're pretty common in the field of cancer genomics, and perhaps for good reason: They display a lot of information at once.
 
@@ -223,3 +222,9 @@ It would be even nicer if this feature was rolled in to `broom::tidy` itself (an
 # PS
 
 In a future blog posts, I may go over how to replicate other features typically provided by `survminer`, like including p-values on plots.
+
+# Thanks
+
+The thumbnail photo was taken by <a href="https://unsplash.com/@david113?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Tip</a> on <a href="https://unsplash.com/s/photos/desert-island?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Thank you David Robinson, Alboukadel Kassambara, and the entire tidyverse team for producing excellent tools!
