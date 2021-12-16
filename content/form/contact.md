@@ -2,7 +2,7 @@
 date: "2019-02-25T13:38:41-06:00"
 description: If you have any inquires, feel free to reach out to me either by my social networks or by filling in the form here!
 draft: false
-formspree_form_id: adamaragaki@gmail.com
+formspree_form_id: mdoboyeg
 layout: split-right
 name: Contact Us Form
 show_poweredby_formspree: true
