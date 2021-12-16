@@ -120,6 +120,10 @@ enableEmoji = true
     title = "Project Portfolio"
     url = "/project/"
     weight = 3
+  [[menu.header]]
+    name = "Contact"
+    title = "Contact Me"
+    url = "/contact/"
     
   # Configure footer  
   [[menu.footer]]
