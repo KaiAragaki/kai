@@ -9,7 +9,7 @@ intro: |
 
   In my down time, [I enjoy making tools for people](/project/) (and myself).
 
-  For a more rigorous detailing of my experience, please check out my CV!
+  If you have any questions, feel free to [contact](/contact/) me or message me on social media!
 ---
 
 ** index doesn't contain a body, just front matter above.

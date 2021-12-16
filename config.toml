@@ -31,7 +31,7 @@ enableEmoji = true
   orgName = ""
   orgLocal = "Baltimore, Maryland"
   description = "Publicly available bad advice"
-  favicon = "/img/favicon.ico"
+  favicon = ""
   logo = "/glasses.png"
   mainSections = ["blog", "project", "talk"]
   navallcaps = true
@@ -120,6 +120,11 @@ enableEmoji = true
     title = "Project Portfolio"
     url = "/project/"
     weight = 3
+  [[menu.header]]
+    name = "CV"
+    title = "Curriculum Vitae"
+    url = "/cv/"
+    weight = 4
     
   # Configure footer  
   [[menu.footer]]

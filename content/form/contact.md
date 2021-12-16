@@ -1,10 +1,8 @@
 ---
 date: "2019-02-25T13:38:41-06:00"
-description: This template has a **contact-us** form built right in. All you need
-  to do is add a valid recipient form-id to the front matter of this form page and
-  you're ready to receive submissions.
+description: If you have any inquires, feel free to reach out to me either by my social networks or by filling in the form here!
 draft: false
-formspree_form_id: id-from-formspree
+formspree_form_id: adamaragaki@gmail.com
 layout: split-right
 name: Contact Us Form
 show_poweredby_formspree: true

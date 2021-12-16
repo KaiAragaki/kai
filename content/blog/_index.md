@@ -19,13 +19,13 @@ sidebar:
   author: Kai
   description: "When it comes to writing code, my main main goals are to make it:
   
-  - accurate
+  - Accurate
   
-  - reproducible
+  - Reproducible
   
-  - readable
+  - Readable
   
-  - pretty
+  - Pretty
   
   
   Posts on here will hopefully help you do the same, and help me remember what I did."

@@ -5,12 +5,12 @@ action_type: text
 description: Welcome! On this website you'll find information about me and my projects, as well as occasional blog posts no one asked for.
 image_left: true
 images:
-- img/revoir.jpg
+- lola.jpg
 show_action_link: true
 show_social_links: true
 subtitle: Bad advice - for free!
 text_align_left: false
-title: Kai's Website
+title: The Kaidyverse
 type: home
 ---
 
