@@ -4,7 +4,7 @@ categories:
 - package
 date: "2021-04-12"
 draft: false
-excerpt: gp: A Grammar of Plates
+excerpt: "gp: A Grammar of Plates"
 featured: true
 layout: single-sidebar
 links:
