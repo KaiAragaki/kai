@@ -5,6 +5,7 @@ date: '2022-04-12'
 slug: []
 categories: []
 tags: []
+excerpt: "Tidy microwell data using a succinct yet powerful grammar with {gp}"
 ---
 
 If I'm not staring at a computer screen[^1], I'm staring at a microwell plate, doing my duty as a lab rat: moving little liquids from one place to another.
