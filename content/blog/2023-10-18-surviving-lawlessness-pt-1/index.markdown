@@ -26,89 +26,20 @@ You've been training your cat since it was born, and it's been a couple months n
 You poke around the neighborhood and see how your neighbors are faring teaching their cats to sing. They've all been training their cats since birth[^2] and told you the age that the cat started singing. You make a little plot:
 
 
-```r
-library(ggplot2)
-library(bladdr)
-```
-
-
-```r
-set.seed(1)
-n <- 5
-df <- data.frame(
-  cat = 1:n,
-  sing_time = rgamma(n, 2)
-)
-ggplot(df, aes(x = sing_time, y = cat)) +
-  geom_segment(aes(x = 0, y = cat, xend = sing_time, yend = cat)) +
-  geom_point() +
-  theme_tufte(20) +
-  labs(x = "Cat age (human years)",
-       y = "Cat") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 It like most cats are taking more than a year or two to learn how to sing. Your fears are put at ease for a moment, but you're not an idiot: you know just a few samples can be misleading[^3]. You begin a cat census, asking everyone who has started training their cat from birth how long it took them for their cats to sing. The best you can do is scrape together 100 people [^4]:
 
-
-```r
-set.seed(2)
-n <- 100
-df <- data.frame(
-  cat = 1:n,
-  sing_time = sort(rgamma(n, 2))
-)
-ggplot(df, aes(x = sing_time, y = cat)) +
-  geom_segment(aes(x = 0, y = cat, xend = sing_time, yend = cat)) +
-  theme_tufte(20) +
-  labs(x = "Cat age (human years)",
-       y = "Cat") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
-
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 It looks like somewhere between 1-2 years is the sweet spot for when most cats get their voice. You think about plotting these results a different way - a density histogram.
-
-
-```r
-df |> 
-  ggplot(aes(x = sing_time)) +
-  geom_density() +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 It looks a bit lumpy. You want to know if there truly is a 'second wind' of learning at around 5 years or if it's just statistical noise - but you really left it all out on the field when you made all those calls for the cat census. You don't think you could gather even *more* cat data.
 
 Whenever you are faced with these issues, you know just where to go: the lady with completely black eyes that lives in the woods in a dilapidated cottage. She give you (in exchange for a surprisingly large amount of viscera from forest fauna) a beautiful plot[^5] that shows the theoretical distribution of time-to-cat-singing. It's what you would have gotten if you had done an infinite cat census:
-
-
-```r
-ggplot(data.frame(x = c(0, 11)), aes(x)) +
-  stat_function(fun = dgamma, args = c(2)) +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
@@ -129,21 +60,6 @@ Before we go any further, some math notation. I'm going to call the pdf `\(f\)`,
 
 This function isn't as useless as it seems. If we multiply the pdf by time, we should get the probability of an event happening over that range of time. Except...our probability varies over time. With physical density, it didn't vary across the volume of the object (provided it's a pure substance), so we could just multiply two constant numbers (the volume times the density) together and call it a day. We could do that if cats learned to sing with a constant probability over time, but they don't: as we saw, there's a higher probability at age 1, and lower everywhere else. The probability of a cat learning to sing from age 4 to 6 is much lower than from age 1 to 3.
 
-
-```r
-ggplot(data.frame(x = c(0, 11)), aes(x)) +
-  stat_function(fun = dgamma, args = c(2)) +
-  stat_function(fun = dgamma, args = c(2), xlim = c(1, 3), geom = "area", fill = "green") +
-  stat_function(fun = dgamma, args = c(2), xlim = c(4, 6), geom = "area", fill = "red") +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
-
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 It's almost like...it matters...how much area is under the curve
@@ -154,20 +70,6 @@ Yeah. I know. Calculus. Integrals, to be specific. Unfortunately, they're very g
 ### Integrating the pdf
 One useful function to have to know what the probability that Fluffy should have learned to sing by now - that is, the integral from birth ( `\(t = 0\)` ) to now ( `\(t\)` ).
 
-
-```r
-ggplot(data.frame(x = c(0, 11)), aes(x)) +
-  stat_function(fun = dgamma, args = c(2)) +
-  stat_function(fun = dgamma, args = c(2), xlim = c(0, 2), geom = "area", fill = "gray50") +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
-
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 $$
@@ -177,20 +79,6 @@ $$
 We call that function `\(F(t)\)`. In the medical field, you might consider this function the probability that a patient will have died between, say, when they were diagnosed ( `\(t = 0\)` ) and now ( `\(t\)` ).
 
 Another useful function is one that tells you the probability of Fluffy still not being able to sing at some time ( `\(t\)` ). This is the integral from `\(t\)` to `\(∞\)`.
-
-
-```r
-ggplot(data.frame(x = c(0, 11)), aes(x)) +
-  stat_function(fun = dgamma, args = c(2)) +
-  stat_function(fun = dgamma, args = c(2), xlim = c(2, 11), geom = "area", fill = "gray50") +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
@@ -210,20 +98,6 @@ It's important to note that if your patient had a 90% chance of not making it to
 
 ## Conditional probability
 So, a cat has trained for 7 years and sits in front of you, utterly mute. Suppose we naively tried to use our pdf to determine the probability of this cat learning to sing some time in the future:
-
-
-```r
-ggplot(data.frame(x = c(0, 11)), aes(x)) +
-  stat_function(fun = dgamma, args = c(2)) +
-  stat_function(fun = dgamma, args = c(2), xlim = c(7, 11), geom = "area", fill = "gray50") +
-  theme_tufte() +
-  labs(x = "Cat age (human years)") +
-  theme(axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        plot.background = element_blank(),
-        panel.background = element_blank())
-```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
